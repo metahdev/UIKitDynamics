@@ -2,7 +2,7 @@
 //  RoundView.swift
 //  UIKitDynamics
 //
-//  Created by Metah on 21.02.2021.
+//  Created by iosdev.kz on 20.02.2021.
 //
 
 import UIKit
@@ -14,6 +14,8 @@ class CircleView: UIImageView {
         layer.fillColor = UIColor.clear.cgColor
         return layer
     }()
+    
+    override var collisionBoundsType: UIDynamicItemCollisionBoundsType { return .ellipse }
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -26,10 +28,5 @@ class CircleView: UIImageView {
     private func circularPath(center: CGPoint = .zero) -> UIBezierPath {
         let radius = min(bounds.width, bounds.height) / 2
         return UIBezierPath(arcCenter: center, radius: radius, startAngle: 0, endAngle: .pi * 2, clockwise: true)
-    }
-
-    override var collisionBoundsType: UIDynamicItemCollisionBoundsType { return .path }
-
-    override var collisionBoundingPath: UIBezierPath { return circularPath()
     }
 }

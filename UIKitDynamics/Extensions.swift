@@ -2,7 +2,7 @@
 //  Extensions.swift
 //  UIKitDynamics
 //
-//  Created by Metah on 28.02.2021.
+//  Created by iosdev.kz on 28.02.2021.
 //
 
 import UIKit
