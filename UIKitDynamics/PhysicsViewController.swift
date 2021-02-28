@@ -124,8 +124,6 @@ class PhysicsViewController: UIViewController {
     // MARK:- Attachment
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let theTouch = touches.first {
-            // assigning the attachment point of the red view to the touch location, which makes it hang at a certain distance
-            // offset makes the attraction more realistic
             currentLocation = theTouch.location(in: self.view)
             let offset = UIOffset(horizontal: 15, vertical: 15)
             attachment = UIAttachmentBehavior(item: ball, offsetFromCenter: offset, attachedToAnchor: currentLocation)
