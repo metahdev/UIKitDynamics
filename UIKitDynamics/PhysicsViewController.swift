@@ -62,10 +62,17 @@ class PhysicsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
         addSubviews()
         setFrames()
-        setupAnimator()
+        setProperties()
+        setGravity()
+        setCollision()
+        setBehavior()
+    }
+    
+    private func setProperties() {
+        view.backgroundColor = .white
+        animator = UIDynamicAnimator(referenceView: self.view)
     }
     
     private func addSubviews() {
@@ -85,14 +92,6 @@ class PhysicsViewController: UIViewController {
         hoopCenter.frame = CGRect(x: 17, y: 300, width: 130, height: 5)
         hoopEnd.frame = CGRect(x: 147, y: 300, width: 2, height: 5)
         ball.frame = CGRect(x: 200, y: -10, width: 100, height: 100)
-    }
-    
-    private func setupAnimator() {
-        animator = UIDynamicAnimator(referenceView: self.view)
-        
-        setGravity()
-        setCollision()
-        setBehavior()
     }
     
     private func setGravity() {
